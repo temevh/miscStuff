@@ -14,12 +14,15 @@ function testGet() {
 }
 
 function testPost() {
+  const rand = Math.random();
+
   axios
     .post("http://localhost:5000/api/post", {
-      data: "test123",
+      randNum: rand,
     })
     .then(function (response) {
       console.log(response);
+      console.log("posted", rand, "to database");
     })
     .catch(function (error) {
       console.log(error);

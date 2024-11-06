@@ -30,8 +30,8 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
-const database = client.db("templatedb");
-const collection = database.collection("testdata");
+const database = client.db(process.env.DB_NAME);
+const collection = database.collection(process.env.DB_COLLECTION);
 
 app.use(cors());
 app.use(express.json());
