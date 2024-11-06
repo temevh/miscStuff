@@ -7,6 +7,8 @@ set **DB_URI**, **DB_NAME** and **DB_COLLECTION** in .env
 
 ### "Frontend"
 
+Can be run with `node main.js`
+
 1. Fetches the current data in the database
 2. Posts a random number to database
 
