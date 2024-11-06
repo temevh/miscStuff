@@ -2,7 +2,8 @@ A minimal template for a full-stack application
 Database uses a mongodb cluster
 
 Use `npm install` to install needed deps.
-**NOTE: Nodemon needs to be installed globally `npm -g install nodemon` **
+
+**NOTE: Nodemon needs to be installed globally `npm -g install nodemon`**
 
 set **DB_URI**, **DB_NAME** and **DB_COLLECTION** in .env
 (db_uri is the mongodb collection url)
