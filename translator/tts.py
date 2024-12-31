@@ -3,10 +3,6 @@ import os
 
 language = 'ko'
 
-# Ensure the audio directory exists
-if not os.path.exists('audio'):
-    os.makedirs('audio')
-
 with open('fluent625.txt', 'r', encoding='utf-8') as file:
     words = file.readlines()
 

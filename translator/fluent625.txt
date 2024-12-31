@@ -158,7 +158,7 @@ famous;유명한
 bicycle;자전거
 chicken;닭
 die;주사위
-big/large;큰/큰
+big;큰
 child;어린이
 dig;파기
 fan;팬
@@ -185,7 +185,7 @@ minute;분
 female;여성
 hand;손
 knife;칼
-mix/stir;혼합/저어
+mix;혼합
 fifteen;열 다섯
 hang;걸다
 lake;호수
@@ -396,7 +396,7 @@ slow;느린
 television;텔레비전
 pay;지불하다
 run;달리다
-small/little;작/작은
+small;작
 temperature;온도
 peace;평화
 sad;슬픈
@@ -420,7 +420,7 @@ soft;부드러운
 thin;얇은
 piece;조각
 science;과학
-soil/earth;토양/지구
+soil;토양
 think;생각하다
 pig;돼지
 screen;화면
@@ -451,7 +451,7 @@ space;공간
 Thursday;목요일
 player;플레이어
 seed;씨앗
-speak/say;말/말
+speak;말
 ticket;표
 pocket;포켓
 sell;팔다
@@ -491,7 +491,7 @@ stop;멈추다
 touch;만지다
 price;가격
 she;그녀
-store/shop;상점/상점
+store;상점
 town;도시
 priest;성직자
 ship;배
@@ -499,7 +499,7 @@ straight;똑바로
 train;기차
 prison;감옥
 shirt;셔츠
-street/road;거리/도로
+street;거리
 train;기차
 station;역
 computer program;컴퓨터 프로그램
