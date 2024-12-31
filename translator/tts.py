@@ -1,4 +1,4 @@
-from gtts import gTTS
+from gtts import gTTS # type: ignore
 import os
 
 language = 'ko'
