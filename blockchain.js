@@ -7,20 +7,31 @@ class cryptoBlock {
     this.data = data;
     this.precedingHash = precedingHash;
     this.hash = this.computeHash();
+    this.nonce = 0;
   }
   computeHash() {
     return SHA256(
       this.index +
         this.precedingHash +
         this.timestamp +
-        JSON.stringify(this.data)
+        JSON.stringify(this.data) +
+        this.nonce
     ).toString();
+  }
+  proofOfWork(difficulty) {
+    while (
+      this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")
+    ) {
+      this.nonce++;
+      this.hash = this.computeHash();
+    }
   }
 }
 
 class CryptoBlockchain {
   constructor() {
     this.blockchain = [this.startGenesisBlock()];
+    this.difficulty = 5;
   }
   startGenesisBlock() {
     return new cryptoBlock(0, "23/01/2025", "Initial Block in the Chain", "0");
@@ -30,7 +41,7 @@ class CryptoBlockchain {
   }
   addNewBlock(newBlock) {
     newBlock.precedingHash = this.obtainLatestBlock().hash;
-    newBlock.hash = newBlock.computeHash();
+    newBlock.proofOfWork(this.difficulty);
     this.blockchain.push(newBlock);
   }
   checkChainValidity() {
@@ -50,6 +61,7 @@ class CryptoBlockchain {
 }
 
 let testCoin = new CryptoBlockchain();
+
 testCoin.addNewBlock(
   new cryptoBlock(1, "24/01/2025", {
     sender: "John Smith",
