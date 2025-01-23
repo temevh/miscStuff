@@ -33,6 +33,20 @@ class CryptoBlockchain {
     newBlock.hash = newBlock.computeHash();
     this.blockchain.push(newBlock);
   }
+  checkChainValidity() {
+    for (let i = 1; i < this.blockchain.length; i++) {
+      const currentBlock = this.blockchain[i];
+      const precedingBlock = this.blockchain[i - 1];
+
+      if (currentBlock.hash !== currentBlock.computeHash()) {
+        return false;
+      }
+      if (currentBlock.precedingHash !== precedingBlock.hash) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
 
 let testCoin = new CryptoBlockchain();
@@ -44,7 +58,7 @@ testCoin.addNewBlock(
   })
 );
 testCoin.addNewBlock(
-  new cryptoBlock(1, "25/01/2025", {
+  new cryptoBlock(2, "25/01/2025", {
     sender: "Aladin",
     recipient: "Will Smith",
     quantity: 420,
