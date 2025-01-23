@@ -31,7 +31,7 @@ class cryptoBlock {
 class CryptoBlockchain {
   constructor() {
     this.blockchain = [this.startGenesisBlock()];
-    this.difficulty = 5;
+    this.difficulty = 4;
   }
   startGenesisBlock() {
     return new cryptoBlock(0, "23/01/2025", "Initial Block in the Chain", "0");
@@ -60,7 +60,11 @@ class CryptoBlockchain {
   }
 }
 
+const start = Date.now();
+
 let testCoin = new CryptoBlockchain();
+
+console.log("testCoin mining in progress....");
 
 testCoin.addNewBlock(
   new cryptoBlock(1, "24/01/2025", {
@@ -78,3 +82,5 @@ testCoin.addNewBlock(
 );
 
 console.log(JSON.stringify(testCoin, null, 4));
+const end = Date.now();
+console.log(`Execution time: ${end - start} ms`);
